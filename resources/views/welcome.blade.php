@@ -1,45 +1,30 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ asset('css/master.css') }}">
+  </head>
 </html>
+<body>
+  <div class="wrapper welcome">
+    <h1 class="title">Easy Photowall</h1>
+    <div class="description">
+      <p>Crea presentaciones de imágenes fácilmente</p>
+      <p>Compártelas con quien quieras con un link</p>
+      <p>Sólo selecciona algunas fotos de tu dropbox</p>
+    </div>
+    <button id="dropbox-chooser" class="btn blue">Escoger fotos</button>
+    <div id="loader">
+      <div class="loading">
+        <div class="caption">
+          <p>Cargando tus imágenes</p>
+          <p>Por favor, espera</p>
+        </div>
+        <div class="loader-inner line-scale-pulse-out"></div>
+      </div>
+    </div>
+  </div>
+  <script id="dropboxjs" type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" data-app-key="np8l75lg4xtobr8"></script>
+  <script type="text/javascript" src="{{ asset('js/magic.js') }}"></script>
+</body>

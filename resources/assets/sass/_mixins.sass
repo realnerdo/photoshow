@@ -1,0 +1,16 @@
+=font-size($size)
+    font-size: $size
+    font-size: rem($size)
+
+=opacity($opacity)
+    opacity: $opacity
+    $opacity-ie: $opacity * 100
+    filter: alpha(opacity=$opacity-ie)
+
+=clear
+    content: " "
+    display: table
+    clear: both
+
+=shadow
+    box-shadow: 0 0 6px 3px rgba($black, 0.15)

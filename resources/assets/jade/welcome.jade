@@ -1,0 +1,28 @@
+extends partials/base
+
+block title
+    title Welcome
+    
+block content
+    .wrapper.welcome
+        h1.title Easy Photowall
+        
+        .description
+            //- p Create cool animated photoshows.
+            //- p Just pick some photos from your dropbox.
+            p Crea presentaciones de imágenes fácilmente
+            p Compártelas con quien quieras con un link
+            p Sólo selecciona algunas fotos de tu dropbox
+        
+        button#dropbox-chooser.btn.blue Escoger fotos
+        
+        #loader
+            .loading
+                .caption
+                    p Cargando tus imágenes
+                    p Por favor, espera
+                .loader-inner.line-scale-pulse-out
+
+block scripts
+    script#dropboxjs(type="text/javascript", src="https://www.dropbox.com/static/api/2/dropins.js", data-app-key="np8l75lg4xtobr8")
+    include partials/scripts

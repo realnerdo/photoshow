@@ -1,0 +1,32 @@
+.welcome
+    text-align: center
+    & > .title
+        color: $white
+        font-family: 'Montserrat', Helvetica, Arial, sans-serif
+        +font-size(36px)
+        margin-top: 4rem
+    .description
+        color: $white
+        font-family: 'Varela Round', Helvetica, Arial, sans-serif
+        +font-size(18px)
+        line-height: 1.5em
+        margin-top: 1rem
+    #dropbox-chooser
+        margin-top: 2rem
+    #loader
+        display: none
+        background: rgba($black, 0.95)
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        .loading
+            margin-top: 10rem
+            .caption
+                color: $white
+                font-family: 'Varela Round', Helvetica, Arial, sans-serif
+                +font-size(20px)
+                margin-bottom: 1rem
+                p
+                    line-height: 2em

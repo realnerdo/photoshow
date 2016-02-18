@@ -156,6 +156,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        GrahamCampbell\Dropbox\DropboxServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
+
     ],
 
     /*
@@ -202,6 +205,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        'Dropbox'   => GrahamCampbell\Dropbox\Facades\Dropbox::class,
+        'Image'     => Intervention\Image\Facades\Image::class
     ],
 
 ];

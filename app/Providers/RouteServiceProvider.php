@@ -27,6 +27,10 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot($router);
+
+        $router->bind('gallery', function($name) {
+            return \App\Gallery::where('name', $name)->firstOrFail();
+        });
     }
 
     /**

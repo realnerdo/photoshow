@@ -1,0 +1,23 @@
+{
+  "name": "photoshow",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Asael Jaimes <realnerdo@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/realnerdo/photoshow",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "loaders.css": "^0.1.2",
+    "easyphotowall": "*"
+  }
+}

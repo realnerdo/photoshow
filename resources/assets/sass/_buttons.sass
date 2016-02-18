@@ -1,0 +1,16 @@
+.btn
+    display: inline-block
+    padding: 0.5em 0.8em
+    border: none
+    border-radius: rem(3px)
+    font-family: 'Varela Round', Helvetica, Arial, sans-serif
+    +font-size(18px)
+    +shadow
+    transition: all 0.3s ease
+    &:hover
+        cursor: pointer
+    &.blue
+        background: $blue
+        color: $white
+        &:hover
+            background: lighten($blue, 5)
