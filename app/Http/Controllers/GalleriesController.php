@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Gallery;
 use App\File;
+use Storage;
 
 class GalleriesController extends Controller
 {
@@ -62,9 +63,15 @@ class GalleriesController extends Controller
             preg_match('/\.[^\.]+$/i',$url,$ext);
 
             $filename = $directory . time() . $ext[0];
-            $img->save($filename);
 
-            $gallery->images()->create(['url' => $filename]);
+            $stream = $img->stream();
+
+            $s3 = Storage::disk('s3');
+            $s3->put($filename, $stream->__toString(), 'public');
+            $client = $s3->getDriver()->getAdapter()->getClient();
+            $public_url = $client->getObjectUrl(env('S3_BUCKET'), $filename);
+
+            $gallery->images()->create(['url' => $public_url]);
         }
 
         $response = [
