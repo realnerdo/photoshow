@@ -9,8 +9,11 @@ elixir(function(mix) {
     mix.sass([
         bw + 'easyphotowall/dist/css/easyphotowall.css',
         bw + 'loaders.css/loaders.css',
+        bw + 'typicons.font/src/font/typicons.min.css',
         'master.sass'
     ], 'public/css/master.css');
+
+    mix.copy('public/bower/typicons.font/src/font/', 'public/css');
 });
 
 elixir(function(mix) {

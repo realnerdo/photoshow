@@ -5,24 +5,53 @@ block title
     
 block content
     .wrapper.welcome
+        .logo
+            img.img(src="{{ asset('svg/logo.svg') }}", alt="easyphotowall")
         h1.title Easy Photowall
         
         .description
-            //- p Create cool animated photoshows.
-            //- p Just pick some photos from your dropbox.
-            p Crea presentaciones de imágenes fácilmente
-            p Compártelas con quien quieras con un link
-            p Sólo selecciona algunas fotos de tu dropbox
+            p Create cool animated slideshows
+            p Share them with a link
+            p Just pick some images from your dropbox
         
-        button#dropbox-chooser.btn.blue Escoger fotos
+        button#dropbox-chooser.btn.blue
+            span.typcn.typcn-dropbox
+            |  Choose images
+        
+        footer.footer
+            p This is an experiment using my plugin <a href="https://github.com/realnerdo/easyphotowall" target="_blank">easyphotowall</a>
+            p Design and code made with <span class="love">❤</span> by <a href="http://realnerdo.com/" target="_blank">Asael Jaimes</a>
         
         #loader
             .loading
                 .caption
-                    p Cargando tus imágenes
-                    p Por favor, espera
+                    p Loading your images
+                    p You'll be redirected to your slideshow once it's ready
+                    p Patience is bitter, but its fruit is sweet
                 .loader-inner.line-scale-pulse-out
+                
+        #easyphotowall
 
 block scripts
     script#dropboxjs(type="text/javascript", src="https://www.dropbox.com/static/api/2/dropins.js", data-app-key="np8l75lg4xtobr8")
     include partials/scripts
+    script(type="text/javascript").
+        var az = 'https://s3-us-west-2.amazonaws.com/easyphotowall/uploads/gallery_1456051465/';
+
+        var images = [
+            az + '1456051469.jpeg',
+            az + '1456051472.jpeg',
+            az + '1456051475.jpeg',
+            az + '1456051477.jpeg',
+            az + '1456051479.jpeg',
+            az + '1456051481.jpeg',
+            az + '1456051483.jpeg',
+            az + '1456051485.jpeg',
+            az + '1456051488.jpeg',
+            az + '1456051489.jpeg'
+        ];
+
+        var photoshow = new Photowall({
+            data: images
+        });
+        photoshow.play();
